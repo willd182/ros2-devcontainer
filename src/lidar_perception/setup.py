@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import find_packages, setup
 
 package_name = 'lidar_perception'
@@ -10,6 +12,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+		(os.path.join('share', package_name, 'launch'),
+         glob('launch/*.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,7 +29,7 @@ setup(
     entry_points={
         'console_scripts': [
 			"lidar_publisher = lidar_perception.lidar_publisher:main",
-			"lidar_reciever = lidar_perception.lidar_reciever:main"
+			"lidar_listener = lidar_perception.lidar_reciever:main"
         ],
     },
 )
