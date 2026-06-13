@@ -1,41 +1,25 @@
 {
-  "name": "ROS 2 Workspace humble-ros-base",
-  "remoteUser": "rosdev",
+  "name": "ROS2 Jazzy Dev Container",
+
   "build": {
-      "dockerfile": "Dockerfile",
-      "args": {
-          "USERNAME": "rosdev",
-          "GID": "1000",
-          "UID": "1000"
-      }
+    "dockerfile": "Dockerfile"
   },
-  "customizations": {
-      "vscode": {
-          "extensions": [
-              "ms-python.python",
-              "charliermarsh.ruff",
-              "ms-vscode.cpptools-extension-pack",
-              "ms-iot.vscode-ros",
-              "smilerobotics.urdf",
-              "redhat.vscode-xml",
-              "tamasfe.even-better-toml",
-              "timonwong.shellcheck",
-              "yzhang.markdown-all-in-one"
-          ],
-          "settings": {
-              "files.associations": {
-                  "*.rviz": "yaml",
-                  "*.srdf": "xml",
-                  "*.urdf": "xml",
-                  "*.xacro": "xml"
-              }
-          }
-      }
-  },
-  "workspaceFolder": "/home/rosdev/ros2_ws",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/home/rosdev/ros2_ws,type=bind",
-  "mounts": [],
+
+  "workspaceFolder": "/workspaces/ros2_ws",
+
   "runArgs": [
-      "--net=host"
-  ]
+    "--network=host",
+    "--ipc=host"
+  ],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  },
+
+  "postCreateCommand": "rosdep update || true"
 }

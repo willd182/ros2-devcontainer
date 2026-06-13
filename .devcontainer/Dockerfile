@@ -1,34 +1,17 @@
-FROM ros:humble-ros-base
+FROM ros:jazzy
 
-ARG USERNAME=rosdev
-ARG UID=1000
-ARG GID=$UID
+RUN apt-get update && apt-get install -y \
+    git \
+    ros-jazzy-demo-nodes-cpp \
+    build-essential \
+    python3-colcon-common-extensions \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install some dependencies packages
-RUN apt update -q \
-    && apt upgrade -q -y \
-    && apt install -y --no-install-recommends \
-    software-properties-common \
-    python3-pip \
-    xauth \
-    && apt clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+WORKDIR /workspaces/ros2_ws
 
-# Create and switch to user
-RUN groupadd -g $GID $USERNAME \
-    && useradd -lm -u $UID -g $USERNAME -s /bin/bash $USERNAME \
-    && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-USER $USERNAME
+ENV ROS_DOMAIN_ID=0
+ENV RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 
-# Create workspace so that user own this directory
-RUN mkdir -p /home/$USERNAME/ros2_ws/src
-WORKDIR /home/$USERNAME/ros2_ws
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /etc/bash.bashrc
 
-# Copy configuration files
-RUN echo 'source /opt/ros/'$ROS_DISTRO'/setup.bash' >> /home/$USERNAME/.bashrc \
-    && echo 'source /home/'$USERNAME'/ros2_ws/install/setup.bash' >> /home/$USERNAME/.bashrc
-
-# Setup entrypoint
-COPY ./ros_entrypoint.sh /
-ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
