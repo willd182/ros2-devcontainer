@@ -1,11 +1,15 @@
 {
 	"python.autoComplete.extraPaths": [
-		"/opt/ros/humble/lib/python3.10/site-packages",
-		"/opt/ros/humble/local/lib/python3.10/dist-packages"
-	],
+    "/workspaces/ros2_ws/install/lidar_perception/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/feature_manager/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/common_interfaces/lib/python3.12/site-packages",
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ],
 	"python.analysis.extraPaths": [
-		"/opt/ros/humble/lib/python3.10/site-packages",
-		"/opt/ros/humble/local/lib/python3.10/dist-packages"
-	],
+    "/workspaces/ros2_ws/install/lidar_perception/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/feature_manager/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/common_interfaces/lib/python3.12/site-packages",
+    "/opt/ros/jazzy/lib/python3.12/site-packages"
+  ],
 	"ROS2.distro": "humble"
 }
