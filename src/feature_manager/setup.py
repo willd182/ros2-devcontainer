@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+			'system_fsm_node = feature_manager.system_fsm_node:main',
         ],
     },
 )
