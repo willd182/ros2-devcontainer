@@ -1,4 +1,4 @@
-from StateMachine import State, StateMachine
+from feature_manager.StateMachine import State, StateMachine
 from common_interfaces.msg import CruiseRequest
 
 class StateMachineForCACC():

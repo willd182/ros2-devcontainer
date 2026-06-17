@@ -1,9 +1,9 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String  # optional debug output
+from std_msgs.msg import String  
 
 from common_interfaces.msg import CruiseRequest
-from feature_manager.CACC_StateMachine import StateMachineForCACC  # adjust import
+from feature_manager.CACC_StateMachine import StateMachineForCACC 
 
 
 class SystemFSMNode(Node):
@@ -30,21 +30,14 @@ class SystemFSMNode(Node):
 
         self.get_logger().info("CACC Node initialized")
 
-    # -------------------------
-    # ROS INPUT LAYER
-    # -------------------------
     def cruise_callback(self, msg: CruiseRequest):
-        """
-        Convert ROS message → FSM events
-        """
+        """ Convert ROS message to FSM events """
         self.fsm.update_fields_with_cruise_request(msg)
 
-    # -------------------------
-    # MAIN FSM LOOP
-    # -------------------------
     def tick(self):
         """
         Fixed-rate execution:
+
         1. Step FSM
         2. Publish state
         3. Reset event consumption handled inside FSM

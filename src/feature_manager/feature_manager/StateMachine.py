@@ -1,24 +1,18 @@
 from enum import Enum, auto
-from typing import Callable, Dict, Tuple, Optional
+from typing import Callable, Tuple
 
-
-# ----------------------------
-# 1. Define States
-# ----------------------------
+# Define States for the FSM
 class State(Enum):
     OFF = auto()
     STBY = auto()
     ON = auto()
     FAULTED = auto()
 
-
+# Instances of Types
 Condition = Callable[[], bool]
 TransitionKey = Tuple[State, State]
 
-
-# ----------------------------
-# 2. FSM Core
-# ----------------------------
+# Simple FSM Implementation
 class StateMachine:
     def __init__(self, initial_state: State):
         self.state = initial_state
