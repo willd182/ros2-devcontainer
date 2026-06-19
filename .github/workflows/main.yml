@@ -1,29 +1,27 @@
-name: ROS2 CI
-
-on:
-  push:
-  pull_request:
-
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Build image
-        run: |
-          docker build \
-            -f .devcontainer/Dockerfile \
-            -t ros2-ci .
+        run: docker build -f .devcontainer/Dockerfile -t ros2-ci .
 
       - name: Build workspace
         run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/ws \
-            ros2-ci \
-            bash -c "
-              cd /ws &&
-              source /opt/ros/jazzy/setup.bash &&
-              colcon build
-            "
+          docker run --rm -v ${{ github.workspace }}:/ws ros2-ci bash -c "
+            source /opt/ros/jazzy/setup.bash &&
+            cd /ws &&
+            colcon build
+          "
+
+      - name: Test workspace
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/ws ros2-ci bash -c "
+            source /opt/ros/jazzy/setup.bash &&
+            cd /ws &&
+            source install/setup.bash &&
+            colcon test &&
+            colcon test-result --verbose
+          "
