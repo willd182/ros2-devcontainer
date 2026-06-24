@@ -2,12 +2,14 @@
 	"python.autoComplete.extraPaths": [
     "/workspaces/ros2_ws/install/lidar_perception/lib/python3.12/site-packages",
     "/workspaces/ros2_ws/install/feature_manager/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/custom_interfaces/lib/python3.12/site-packages",
     "/workspaces/ros2_ws/install/common_interfaces/lib/python3.12/site-packages",
     "/opt/ros/jazzy/lib/python3.12/site-packages"
   ],
 	"python.analysis.extraPaths": [
     "/workspaces/ros2_ws/install/lidar_perception/lib/python3.12/site-packages",
     "/workspaces/ros2_ws/install/feature_manager/lib/python3.12/site-packages",
+    "/workspaces/ros2_ws/install/custom_interfaces/lib/python3.12/site-packages",
     "/workspaces/ros2_ws/install/common_interfaces/lib/python3.12/site-packages",
     "/opt/ros/jazzy/lib/python3.12/site-packages"
   ],

@@ -1,7 +1,7 @@
 import pytest
 from feature_manager.CACC_StateMachine import StateMachineForCACC
 from feature_manager.StateMachine import State
-from common_interfaces.msg import CruiseRequest
+from custom_interfaces.msg import CruiseRequest
 
 @pytest.fixture
 def fsm():
