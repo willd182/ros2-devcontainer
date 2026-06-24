@@ -1,3 +1,5 @@
+"""ROS 2 node for CACC finite state machine execution and state publishing."""
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String  
@@ -7,7 +9,10 @@ from feature_manager.CACC_StateMachine import StateMachineForCACC
 
 
 class SystemFSMNode(Node):
+    """ROS 2 node managing CACC state machine lifecycle and events."""
+
     def __init__(self):
+        """Initialize FSM node with subscribers, publishers, and timer."""
         super().__init__('SystemFSMNode')
 
         # FSM
@@ -31,7 +36,11 @@ class SystemFSMNode(Node):
         self.get_logger().info("CACC Node initialized")
 
     def cruise_callback(self, msg: CruiseRequest):
-        """ Convert ROS message to FSM events """
+        """Convert ROS cruise request message to FSM events.
+
+        Args:
+            msg: CruiseRequest message with cruise control parameters.
+        """
         self.fsm.update_fields_with_cruise_request(msg)
 
     def tick(self):
@@ -53,6 +62,11 @@ class SystemFSMNode(Node):
 
 
 def main(args=None):
+    """Entry point for the SystemFSMNode.
+
+    Args:
+        args: Optional command-line arguments.
+    """
     rclpy.init(args=args)
     node = SystemFSMNode()
 
