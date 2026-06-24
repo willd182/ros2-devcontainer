@@ -39,7 +39,6 @@ jobs:
 
       - name: Show test results
         if: always()
-        continue-on-error: true   # TODO: remove once all tests are passing, to enforce pass/fail
         run: |
           docker exec ros2-ci-container bash -c "
             cd /ws &&
