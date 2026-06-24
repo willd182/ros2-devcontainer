@@ -9,7 +9,8 @@
 
   "runArgs": [
     "--network=host",
-    "--ipc=host"
+    "--ipc=host",
+    "--name", "ecocar_ros2_ws"
   ],
 
   "customizations": {
