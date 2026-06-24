@@ -1,5 +1,5 @@
 from feature_manager.StateMachine import State, StateMachine
-from common_interfaces.msg import CruiseRequest
+from custom_interfaces.msg import CruiseRequest
 
 class StateMachineForCACC():
 	def __init__(self):

@@ -9,7 +9,7 @@
 
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
-  <depend>common_interfaces</depend>
+  <depend>custom_interfaces</depend>
 
   <test_depend>python3-pytest</test_depend>
 

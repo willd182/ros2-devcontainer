@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String  
 
-from common_interfaces.msg import CruiseRequest
+from custom_interfaces.msg import CruiseRequest
 from feature_manager.CACC_StateMachine import StateMachineForCACC 
 
 
