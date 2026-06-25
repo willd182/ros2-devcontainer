@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>feature_manager.CACC_StateMachine module &mdash; feature_manager 0.0.0 documentation</title>
+  <title>feature_manager.CACC_StateMachine module &mdash; feature_manager: Jazzy 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=7026087e"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -32,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            feature_manager
+            feature_manager: Jazzy
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,7 +42,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul class="current">
@@ -56,8 +57,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="standards.html">Standard Documents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="standard_docs/PACKAGE.html">PACKAGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dependencies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="__ros_package_dependencies.html">ROS Package Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/rclpy/">rclpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/std_msgs/">std_msgs</a></li>
 </ul>
 </li>
 </ul>
@@ -71,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">feature_manager</a>
+          <a href="index.html">feature_manager: Jazzy</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -93,28 +98,24 @@
              
   <section id="module-feature_manager.CACC_StateMachine">
 <span id="feature-manager-cacc-statemachine-module"></span><h1>feature_manager.CACC_StateMachine module<a class="headerlink" href="#module-feature_manager.CACC_StateMachine" title="Link to this heading"></a></h1>
-<p>State machine for co-operative adaptive cruise control transitions.</p>
+<p>State machine for cooperative adaptive cruise control transitions.</p>
 <p>This module defines the CACC feature manager state machine and maps cruise
 control request messages to driver event inputs.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="feature_manager.CACC_StateMachine.StateMachineForCACC">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">feature_manager.CACC_StateMachine.</span></span><span class="sig-name descname"><span class="pre">StateMachineForCACC</span></span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StateMachineForCACC</span></span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Manage CACC transitions across OFF, STBY, ON, and FAULTED states.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="feature_manager.CACC_StateMachine.StateMachineForCACC.reset_events">
-<span class="sig-name descname"><span class="pre">reset_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC.reset_events" title="Link to this definition"></a></dt>
-<dd><p>Clear one-shot driver event flags.</p>
-<p>This ensures a cruise request event is only acted upon during the step in
-which it was received.</p>
-</dd></dl>
-
+<p>Manages transitions for CACC across OFF, STBY, ON, and FAULTED states.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="feature_manager.CACC_StateMachine.StateMachineForCACC.state">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC.state" title="Link to this definition"></a></dt>
-<dd><p>Return the current CACC state.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>State: The current state of the underlying state machine.</p>
+<dd><p>Current state of the CACC feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current state of the underlying state machine.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="feature_manager.StateMachine.html#feature_manager.StateMachine.State" title="feature_manager.StateMachine.State">State</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -128,11 +129,20 @@ command events so that they do not persist into the next step.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="feature_manager.CACC_StateMachine.StateMachineForCACC.reset_events">
+<span class="sig-name descname"><span class="pre">reset_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC.reset_events" title="Link to this definition"></a></dt>
+<dd><p>Clear one-shot driver event flags.</p>
+<p>This ensures a cruise request event is only acted upon during the step in
+which it was received.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="feature_manager.CACC_StateMachine.StateMachineForCACC.update_fields_with_cruise_request">
-<span class="sig-name descname"><span class="pre">update_fields_with_cruise_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CruiseRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC.update_fields_with_cruise_request" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_fields_with_cruise_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.CACC_StateMachine.StateMachineForCACC.update_fields_with_cruise_request" title="Link to this definition"></a></dt>
 <dd><p>Translate a CruiseRequest message into internal event flags.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>msg (CruiseRequest): Incoming cruise control request message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>CruiseRequest</em>) – Incoming cruise control request message.</p>
 </dd>
 </dl>
 </dd></dl>

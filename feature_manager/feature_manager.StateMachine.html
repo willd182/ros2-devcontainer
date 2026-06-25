@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>feature_manager.StateMachine module &mdash; feature_manager 0.0.0 documentation</title>
+  <title>feature_manager.StateMachine module &mdash; feature_manager: Jazzy 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=7026087e"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -32,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            feature_manager
+            feature_manager: Jazzy
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,7 +42,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul class="current">
@@ -56,8 +57,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="standards.html">Standard Documents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="standard_docs/PACKAGE.html">PACKAGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dependencies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="__ros_package_dependencies.html">ROS Package Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/rclpy/">rclpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/std_msgs/">std_msgs</a></li>
 </ul>
 </li>
 </ul>
@@ -71,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">feature_manager</a>
+          <a href="index.html">feature_manager: Jazzy</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -96,17 +101,17 @@
 <p>Finite state machine implementation with state enumeration and transitions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="feature_manager.StateMachine.State">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">feature_manager.StateMachine.</span></span><span class="sig-name descname"><span class="pre">State</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.State" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">State</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.State" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <p>States for the finite state machine.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="feature_manager.StateMachine.State.FAULTED">
-<span class="sig-name descname"><span class="pre">FAULTED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.FAULTED" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="feature_manager.StateMachine.State.OFF">
+<span class="sig-name descname"><span class="pre">OFF</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.OFF" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="feature_manager.StateMachine.State.OFF">
-<span class="sig-name descname"><span class="pre">OFF</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.OFF" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="feature_manager.StateMachine.State.STBY">
+<span class="sig-name descname"><span class="pre">STBY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.STBY" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -115,25 +120,33 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="feature_manager.StateMachine.State.STBY">
-<span class="sig-name descname"><span class="pre">STBY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.STBY" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="feature_manager.StateMachine.State.FAULTED">
+<span class="sig-name descname"><span class="pre">FAULTED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#feature_manager.StateMachine.State.FAULTED" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="feature_manager.StateMachine.StateMachine">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">feature_manager.StateMachine.</span></span><span class="sig-name descname"><span class="pre">StateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#feature_manager.StateMachine.State" title="feature_manager.StateMachine.State"><span class="pre">State</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.StateMachine" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.StateMachine" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Manages state transitions based on conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>initial_state</strong> (<a class="reference internal" href="#feature_manager.StateMachine.State" title="feature_manager.StateMachine.State"><em>State</em></a>)</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="feature_manager.StateMachine.StateMachine.add_transition">
 <span class="sig-name descname"><span class="pre">add_transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.StateMachine.add_transition" title="Link to this definition"></a></dt>
 <dd><p>Add a transition between two states with a condition.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>from_state: Source State.
-to_state: Destination State.
-condition: Callable that returns True when transition should occur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_state</strong> – Source State.</p></li>
+<li><p><strong>to_state</strong> – Destination State.</p></li>
+<li><p><strong>condition</strong> – Callable that returns True when transition should occur.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -142,8 +155,9 @@ condition: Callable that returns True when transition should occur.</p>
 <dt class="sig sig-object py" id="feature_manager.StateMachine.StateMachine.step">
 <span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.StateMachine.StateMachine.step" title="Link to this definition"></a></dt>
 <dd><p>Evaluate conditions and perform any applicable state transition.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>Current state after evaluation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current state after evaluation.</p>
 </dd>
 </dl>
 </dd></dl>
