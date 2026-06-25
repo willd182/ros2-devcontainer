@@ -4,5 +4,6 @@ Standard Documents
 .. toctree::
    :maxdepth: 1
 
+   __CHANGELOG
    __PACKAGE
 

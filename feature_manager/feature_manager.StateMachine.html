@@ -44,29 +44,42 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="feature_manager.CACC_StateMachine.html">feature_manager.CACC_StateMachine module</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">feature_manager.StateMachine module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="feature_manager.system_fsm_node.html">feature_manager.system_fsm_node module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="feature_manager.CACC_StateMachine.html">feature_manager.CACC_StateMachine module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="feature_manager.CACC_StateMachine.html#feature_manager.CACC_StateMachine.StateMachineForCACC"><code class="docutils literal notranslate"><span class="pre">StateMachineForCACC</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="feature_manager.html#module-feature_manager">Module contents</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">feature_manager.StateMachine module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#feature_manager.StateMachine.State"><code class="docutils literal notranslate"><span class="pre">State</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feature_manager.StateMachine.StateMachine"><code class="docutils literal notranslate"><span class="pre">StateMachine</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="feature_manager.system_fsm_node.html">feature_manager.system_fsm_node module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="feature_manager.system_fsm_node.html#feature_manager.system_fsm_node.SystemFSMNode"><code class="docutils literal notranslate"><span class="pre">SystemFSMNode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="feature_manager.system_fsm_node.html#feature_manager.system_fsm_node.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="feature_manager.html#module-feature_manager">Module contents</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Dependencies</span></p>
+</li>
+</ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="__ros_package_dependencies.html">ROS Package Dependencies</a><ul>
 <li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/rclpy/">rclpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://docs.ros.org/en/jazzy/p/std_msgs/">std_msgs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="__standards.html">Standard Documents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="__CHANGELOG.html">CHANGELOG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="__CHANGELOG.html#id1">0.0.1 (2026-06-25)</a></li>
 </ul>
-<ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="__PACKAGE.html">PACKAGE</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -84,7 +97,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">feature_manager</a></li>
           <li class="breadcrumb-item"><a href="feature_manager.html">feature_manager package</a></li>
       <li class="breadcrumb-item active">feature_manager.StateMachine module</li>
       <li class="wy-breadcrumbs-aside">
@@ -143,9 +155,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>from_state</strong> – Source State.</p></li>
-<li><p><strong>to_state</strong> – Destination State.</p></li>
-<li><p><strong>condition</strong> – Callable that returns True when transition should occur.</p></li>
+<li><p><strong>from_state</strong> (<a class="reference internal" href="#feature_manager.StateMachine.State" title="feature_manager.StateMachine.State"><em>State</em></a>) – Source State.</p></li>
+<li><p><strong>to_state</strong> (<a class="reference internal" href="#feature_manager.StateMachine.State" title="feature_manager.StateMachine.State"><em>State</em></a>) – Destination State.</p></li>
+<li><p><strong>condition</strong> (<em>Callable</em><em>[</em><em>[</em><em>]</em><em>, </em><em>bool</em><em>]</em>) – True when transition should occur.</p></li>
 </ul>
 </dd>
 </dl>

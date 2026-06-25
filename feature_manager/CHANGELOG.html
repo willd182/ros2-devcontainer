@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>feature_manager.system_fsm_node module &mdash; feature_manager: Jazzy 0.0.1 documentation</title>
+  <title>0.0.1 (2026-06-25) &mdash; feature_manager: Jazzy 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -18,9 +18,7 @@
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ROS Package Dependencies" href="__ros_package_dependencies.html" />
-    <link rel="prev" title="feature_manager.StateMachine module" href="feature_manager.StateMachine.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,9 +41,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul class="current">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="feature_manager.html">feature_manager package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="feature_manager.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="feature_manager.CACC_StateMachine.html">feature_manager.CACC_StateMachine module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="feature_manager.CACC_StateMachine.html#feature_manager.CACC_StateMachine.StateMachineForCACC"><code class="docutils literal notranslate"><span class="pre">StateMachineForCACC</span></code></a></li>
 </ul>
@@ -55,9 +53,9 @@
 <li class="toctree-l4"><a class="reference internal" href="feature_manager.StateMachine.html#feature_manager.StateMachine.StateMachine"><code class="docutils literal notranslate"><span class="pre">StateMachine</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">feature_manager.system_fsm_node module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#feature_manager.system_fsm_node.SystemFSMNode"><code class="docutils literal notranslate"><span class="pre">SystemFSMNode</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#feature_manager.system_fsm_node.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="feature_manager.system_fsm_node.html">feature_manager.system_fsm_node module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="feature_manager.system_fsm_node.html#feature_manager.system_fsm_node.SystemFSMNode"><code class="docutils literal notranslate"><span class="pre">SystemFSMNode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="feature_manager.system_fsm_node.html#feature_manager.system_fsm_node.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -97,10 +95,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="feature_manager.html">feature_manager package</a></li>
-      <li class="breadcrumb-item active">feature_manager.system_fsm_node module</li>
+      <li class="breadcrumb-item active">0.0.1 (2026-06-25)</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/feature_manager.system_fsm_node.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/CHANGELOG.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -108,53 +105,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-feature_manager.system_fsm_node">
-<span id="feature-manager-system-fsm-node-module"></span><h1>feature_manager.system_fsm_node module<a class="headerlink" href="#module-feature_manager.system_fsm_node" title="Link to this heading"></a></h1>
-<p>ROS 2 node for CACC finite state machine execution and state publishing.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="feature_manager.system_fsm_node.SystemFSMNode">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SystemFSMNode</span></span><a class="headerlink" href="#feature_manager.system_fsm_node.SystemFSMNode" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
-<p>Node Class wrapping StateMachineForCACC with ROS 2 publishers, subscribers, and timer.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="feature_manager.system_fsm_node.SystemFSMNode.cruise_callback">
-<span class="sig-name descname"><span class="pre">cruise_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.system_fsm_node.SystemFSMNode.cruise_callback" title="Link to this definition"></a></dt>
-<dd><p>Convert ROS cruise request message to FSM events.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>msg</strong> (<em>CruiseRequest</em>) – driver interface with cruise control switches.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="feature_manager.system_fsm_node.SystemFSMNode.tick">
-<span class="sig-name descname"><span class="pre">tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.system_fsm_node.SystemFSMNode.tick" title="Link to this definition"></a></dt>
-<dd><p>Updates the FSM state at a fixed rate and publishes the current state.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="feature_manager.system_fsm_node.main">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feature_manager.system_fsm_node.main" title="Link to this definition"></a></dt>
-<dd><p>Entry point for the SystemFSMNode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>args</strong> – Optional command-line arguments.</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <hr class="docutils" />
+<section id="id1">
+<h1>0.0.1 (2026-06-25)<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Intial FSM Class</p></li>
+<li><p>Basic CACC implementing FSM Class</p></li>
+<li><p>Rosdoc2 Files + Structure</p></li>
+<li><p>pytest test cases</p></li>
+</ul>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="feature_manager.StateMachine.html" class="btn btn-neutral float-left" title="feature_manager.StateMachine module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="__ros_package_dependencies.html" class="btn btn-neutral float-right" title="ROS Package Dependencies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

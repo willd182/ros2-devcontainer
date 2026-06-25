@@ -8,18 +8,14 @@ feature flags / feature lifecycle within a robotics system.
    This code is actively being developed and is not yet considered stable. The API may change in future releases.
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
    :caption: Contents
 
-   Python API <modules>
-
-.. toctree::
-   :caption: Dependencies
-   :maxdepth: 2
-   
-   ROS Package Dependencies <__ros_package_dependencies>
+   feature_manager
 
 .. toctree::
    :hidden:
 
+   ROS Package Dependencies <__ros_package_dependencies>
+   Standard Documents <__standards>
    genindex
