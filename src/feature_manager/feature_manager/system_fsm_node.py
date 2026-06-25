@@ -9,7 +9,7 @@ from feature_manager.CACC_StateMachine import StateMachineForCACC
 
 
 class SystemFSMNode(Node):
-    """ROS 2 node managing CACC state machine lifecycle and events."""
+    """Node Class wrapping StateMachineForCACC with ROS 2 publishers, subscribers, and timer."""
 
     def __init__(self):
         """Initialize FSM node with subscribers, publishers, and timer."""
@@ -39,18 +39,12 @@ class SystemFSMNode(Node):
         """Convert ROS cruise request message to FSM events.
 
         Args:
-            msg: CruiseRequest message with cruise control parameters.
+            msg: driver interface with cruise control switches.
         """
         self.fsm.update_fields_with_cruise_request(msg)
 
     def tick(self):
-        """
-        Fixed-rate execution:
-
-        1. Step FSM
-        2. Publish state
-        3. Reset event consumption handled inside FSM
-        """
+        """ Updates the FSM state at a fixed rate and publishes the current state."""
         self.fsm.step()
 
         # Publish state for debugging / integration

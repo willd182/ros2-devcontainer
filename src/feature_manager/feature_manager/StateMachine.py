@@ -23,13 +23,13 @@ class StateMachine:
         self.state = initial_state
         self.transitions = {}  # from_state -> list of (to_state, condition)
 
-    def add_transition(self, from_state, to_state, condition):
+    def add_transition(self, from_state: State, to_state: State, condition: Condition):
         """Add a transition between two states with a condition.
 
         Args:
             from_state: Source State.
             to_state: Destination State.
-            condition: Callable that returns True when transition should occur.
+            condition: True when transition should occur.
         """
         if from_state not in self.transitions:
             self.transitions[from_state] = []
