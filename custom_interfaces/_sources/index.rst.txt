@@ -1,0 +1,23 @@
+.. GENERATED_CONTENT by rosdoc2.verbs.build.builders.sphinx_builder.
+
+custom_interfaces
+=================
+
+Shared ROS 2 message, service, and action definitions for the ADAS software stack
+
+.. toctree::
+   :maxdepth: 2
+
+
+
+   Message Definitions <interfaces/message_definitions>
+
+
+   Standard Documents <standards>
+
+
+
+.. toctree::
+   :hidden:
+
+   genindex

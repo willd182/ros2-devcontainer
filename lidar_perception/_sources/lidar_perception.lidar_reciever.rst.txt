@@ -1,0 +1,7 @@
+lidar\_perception.lidar\_reciever module
+========================================
+
+.. automodule:: lidar_perception.lidar_reciever
+   :members:
+   :show-inheritance:
+   :undoc-members:

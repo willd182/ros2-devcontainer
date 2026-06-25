@@ -1,0 +1,7 @@
+feature\_manager.StateMachine module
+====================================
+
+.. automodule:: feature_manager.StateMachine
+   :members:
+   :show-inheritance:
+   :undoc-members:

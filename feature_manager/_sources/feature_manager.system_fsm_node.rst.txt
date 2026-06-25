@@ -1,0 +1,7 @@
+feature\_manager.system\_fsm\_node module
+=========================================
+
+.. automodule:: feature_manager.system_fsm_node
+   :members:
+   :show-inheritance:
+   :undoc-members:

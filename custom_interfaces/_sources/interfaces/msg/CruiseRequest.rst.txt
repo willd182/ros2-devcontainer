@@ -1,0 +1,8 @@
+CruiseRequest
+=============
+This is a ROS message definition.
+
+**Source**
+
+.. literalinclude:: ../../../../../../src/custom_interfaces/msg/CruiseRequest.msg
+

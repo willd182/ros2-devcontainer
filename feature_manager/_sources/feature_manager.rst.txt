@@ -1,0 +1,20 @@
+feature\_manager package
+========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   feature_manager.CACC_StateMachine
+   feature_manager.StateMachine
+   feature_manager.system_fsm_node
+
+Module contents
+---------------
+
+.. automodule:: feature_manager
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,19 @@
+lidar\_perception package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   lidar_perception.lidar_publisher
+   lidar_perception.lidar_reciever
+
+Module contents
+---------------
+
+.. automodule:: lidar_perception
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+lidar\_perception.lidar\_publisher module
+=========================================
+
+.. automodule:: lidar_perception.lidar_publisher
+   :members:
+   :show-inheritance:
+   :undoc-members:
