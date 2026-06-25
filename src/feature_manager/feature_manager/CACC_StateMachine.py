@@ -1,4 +1,4 @@
-"""State machine for co-operative adaptive cruise control transitions.
+"""State machine for cooperative adaptive cruise control transitions.
 
 This module defines the CACC feature manager state machine and maps cruise
 control request messages to driver event inputs.
@@ -8,15 +8,10 @@ from feature_manager.StateMachine import State, StateMachine
 from custom_interfaces.msg import CruiseRequest
 
 class StateMachineForCACC():
-	"""Manage CACC transitions across OFF, STBY, ON, and FAULTED states."""
+	"""Manages transitions for CACC across OFF, STBY, ON, and FAULTED states."""
 
 	def __init__(self):
-		"""Initialize the CACC FSM and default event flags.
-
-		The FSM starts in OFF and the transition table is built. Driver event
-		flags are initialized as cleared and vehicle enablement is assumed
-		ready by default.
-		"""
+		"""Initialize the CACC FSM and default event flags."""
 		self.fsm = StateMachine(State.OFF)
 		self._build_transitions()
 
@@ -54,7 +49,7 @@ class StateMachineForCACC():
 	
 	@property
 	def state(self):
-		"""Return the current CACC state.
+		"""Current state of the CACC feature.
 
 		Returns:
 			State: The current state of the underlying state machine.

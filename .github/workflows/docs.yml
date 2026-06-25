@@ -17,7 +17,7 @@ jobs:
       - name: Install doc build dependencies
         run: |
           apt update && apt install -y doxygen graphviz python3-pip
-          pip install rosdoc2 --break-system-packages
+          pip install 'git+https://github.com/ros-infrastructure/rosdoc2@0ed2e41fce9b7324b11890f8f9a44a446645f14e' --break-system-packages
 
       - name: Build workspace
         run: |
