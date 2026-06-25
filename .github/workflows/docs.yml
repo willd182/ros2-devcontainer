@@ -1,0 +1,60 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    container: ros:jazzy
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install doc build dependencies
+        run: |
+          apt update && apt install -y doxygen graphviz python3-pip
+          pip install rosdoc2 --break-system-packages
+
+      - name: Build workspace
+        run: |
+          . /opt/ros/jazzy/setup.sh
+          colcon build
+
+      - name: Build docs for each package
+        run: |
+          . /opt/ros/jazzy/setup.sh
+          . install/setup.sh
+          mkdir -p docs_output
+          for pkg_path in $(colcon list --paths-only); do
+            pkg_name=$(basename "$pkg_path")
+            if [ -f "$pkg_path/package.xml" ]; then
+              rosdoc2 build --package-path "$pkg_path" \
+                --output-directory docs_output
+            fi
+          done
+
+      - name: Generate top-level index
+        run: |
+          python3 - <<'EOF'
+          import os
+          pkgs = sorted(
+              d for d in os.listdir("docs_output")
+              if os.path.isdir(os.path.join("docs_output", d))
+          )
+          links = "\n".join(
+              f'<li><a href="{p}/index.html">{p}</a></li>' for p in pkgs
+          )
+          html = f"<html><body><h1>Package Docs</h1><ul>{links}</ul></body></html>"
+          with open("docs_output/index.html", "w") as f:
+              f.write(html)
+          EOF
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs_output
